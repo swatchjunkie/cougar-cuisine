@@ -1,0 +1,340 @@
+/* =============================================================================
+   Cougar Cuisine — Colors & Type
+   ----------------------------------------------------------------------------
+   Source of truth for color tokens, typography tokens, semantic vars, and
+   color schemes. Tokens mirror DESIGN.md from the original Relume export.
+   ============================================================================= */
+
+/* --- Fonts ---------------------------------------------------------------- */
+@font-face {
+  font-family: "Prata";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./fonts/prata-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url("./fonts/montserrat-300.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./fonts/montserrat-400.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("./fonts/montserrat-500.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("./fonts/montserrat-600.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("./fonts/montserrat-700.woff2") format("woff2");
+}
+
+:root {
+  /* ============================================================
+     COLOR PRIMITIVES
+     ============================================================ */
+
+  /* Neutral — 0 (white) → 7 (near-black). Light theme but most marketing
+     surfaces use neutral-darkest (#090202) or crown-of-thorns as background. */
+  --cc-white: #ffffff;
+  --cc-neutral-0: #ffffff;
+  --cc-neutral-1: #f2f2f2;
+  --cc-neutral-2: #dad9d9;
+  --cc-neutral-3: #b5b3b3;
+  --cc-neutral-4: #848080;
+  --cc-neutral-5: #524d4d;
+  --cc-neutral-6: #211b1b;   /* "darker"  */
+  --cc-neutral-7: #090202;   /* "darkest" — preferred brand black */
+
+  /* Crown of Thorns — PRIMARY brand color (deep burgundy). #6E1F28 is the
+     accent used on light schemes; the darker shades anchor Scheme 5/6 backgrounds. */
+  --cc-crown-1: #f0e8e9;
+  --cc-crown-2: #e2d2d4;
+  --cc-crown-3: #996268;
+  --cc-crown-4: #6e1f28;     /* PRIMARY accent */
+  --cc-crown-5: #581820;
+  --cc-crown-6: #2c0c10;
+  --cc-crown-7: #21090c;
+
+  /* Sundance — warm gold. Editorial accent for badges, gilded touches. */
+  --cc-sundance-1: #f9f6ee;
+  --cc-sundance-2: #f4edde;
+  --cc-sundance-3: #d8c08b;
+  --cc-sundance-4: #c8a55a;
+  --cc-sundance-5: #a08448;
+  --cc-sundance-6: #504224;
+  --cc-sundance-7: #3c311b;
+
+  /* Kaitoke Green — deep forest. Botanical accent. */
+  --cc-kaitoke-1: #e5ece8;
+  --cc-kaitoke-2: #ccd9d2;
+  --cc-kaitoke-3: #4d7c63;
+  --cc-kaitoke-4: #014421;
+  --cc-kaitoke-5: #00361a;
+  --cc-kaitoke-6: #001b0d;
+  --cc-kaitoke-7: #001409;
+
+  /* Tall Poppy — vibrant red. Higher-energy alt accent. */
+  --cc-poppy-1: #f7eaea;
+  --cc-poppy-2: #f0d5d5;
+  --cc-poppy-3: #cb6e6c;
+  --cc-poppy-4: #b5312d;
+  --cc-poppy-5: #902724;
+  --cc-poppy-6: #481312;
+  --cc-poppy-7: #360e0d;
+
+  /* Parchment — warm off-white, used for soft "paper" surfaces. */
+  --cc-parchment-1: #fdfdfb;
+  --cc-parchment-2: #fcfbf8;
+  --cc-parchment-3: #f7f1e7;
+  --cc-parchment-4: #f4ebdd;
+  --cc-parchment-5: #c3bcb0;
+  --cc-parchment-6: #615e58;
+  --cc-parchment-7: #494642;
+
+  /* Tints (transparency primitives) */
+  --cc-white-05: color-mix(in srgb, #ffffff, transparent 95%);
+  --cc-white-10: color-mix(in srgb, #ffffff, transparent 90%);
+  --cc-white-20: color-mix(in srgb, #ffffff, transparent 80%);
+  --cc-white-50: color-mix(in srgb, #ffffff, transparent 50%);
+  --cc-black-05: color-mix(in srgb, #090202, transparent 95%);
+  --cc-black-10: color-mix(in srgb, #090202, transparent 90%);
+  --cc-black-15: color-mix(in srgb, #090202, transparent 85%);
+  --cc-black-20: color-mix(in srgb, #090202, transparent 80%);
+
+  /* ============================================================
+     TYPOGRAPHY
+     ============================================================ */
+  --cc-font-display: "Prata", "Cormorant Garamond", "Times New Roman", serif;
+  --cc-font-body: "Montserrat", -apple-system, system-ui, sans-serif;
+
+  /* Type scale — desktop sizes (≥992px). Mobile sizes documented in README. */
+  --cc-text-h1: 4.5rem;       /* 72px */
+  --cc-text-h2: 3.25rem;      /* 52px */
+  --cc-text-h3: 2.75rem;      /* 44px */
+  --cc-text-h4: 2.25rem;      /* 36px */
+  --cc-text-h5: 1.75rem;      /* 28px */
+  --cc-text-h6: 1.375rem;     /* 22px */
+  --cc-text-large: 1.375rem;
+  --cc-text-medium: 1.125rem;
+  --cc-text-regular: 1rem;
+  --cc-text-small: 0.875rem;
+  --cc-text-tiny: 0.75rem;
+
+  --cc-leading-tight: 1.2;
+  --cc-leading-snug: 1.3;
+  --cc-leading-normal: 1.4;
+  --cc-leading-relaxed: 1.5;
+  --cc-tracking-tight: -0.01em;
+  --cc-tracking-wide: 0.08em;     /* eyebrow / label uppercase */
+
+  /* ============================================================
+     SPACING, RADII, BORDERS
+     ============================================================ */
+  --cc-space-1: 0.25rem;
+  --cc-space-2: 0.5rem;
+  --cc-space-3: 0.75rem;
+  --cc-space-4: 1rem;
+  --cc-space-5: 1.25rem;
+  --cc-space-6: 1.5rem;
+  --cc-space-8: 2rem;
+  --cc-space-10: 2.5rem;
+  --cc-space-12: 3rem;
+  --cc-space-16: 4rem;
+  --cc-space-20: 5rem;
+  --cc-space-28: 7rem;
+
+  --cc-container-xxl: 80rem;   /* main editorial container width */
+
+  /* Edgy: zero radii everywhere. This is intentional and brand-defining. */
+  --cc-radius-button: 0;
+  --cc-radius-card: 0;
+  --cc-radius-input: 0;
+  --cc-radius-image: 0;
+  --cc-radius-badge: 0;
+
+  --cc-border-width: 2px;       /* outlined buttons, dividers, card frames */
+
+  /* Primary button "elevate" shadow stack — inset gradient gives the
+     polished, slightly-domed appearance specific to the brand. */
+  --cc-shadow-elevate:
+    inset 0 -2px 1px 0 var(--cc-black-20),
+    inset 0 32px 24px 0 var(--cc-white-05),
+    inset 0 1px 1px 1px var(--cc-white-20),
+    inset 0 0 0 1px var(--cc-black-15),
+    0 1px 2px 0 var(--cc-black-15);
+  --cc-shadow-elevate-hover:
+    inset 0 -2px 1px 0 var(--cc-black-20),
+    inset 0 32px 24px 0 var(--cc-white-05),
+    inset 0 1px 1px 1px var(--cc-white-20),
+    inset 0 0 0 1px var(--cc-black-15),
+    0 2px 4px 0 var(--cc-black-15);
+
+  /* Motion */
+  --cc-ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+  --cc-duration-fast: 150ms;
+  --cc-duration-base: 200ms;
+  --cc-duration-slow: 400ms;
+
+  /* ============================================================
+     SEMANTIC TOKENS (default = light page on white)
+     ============================================================ */
+  --cc-bg: var(--cc-neutral-0);
+  --cc-fg: var(--cc-neutral-7);
+  --cc-fg-muted: var(--cc-neutral-5);
+  --cc-border: var(--cc-neutral-7);
+  --cc-accent: var(--cc-crown-4);
+  --cc-accent-hover: var(--cc-crown-5);
+  --cc-on-accent: var(--cc-white);
+}
+
+/* =============================================================================
+   COLOR SCHEMES
+   Apply one of these classes to any section / surface. All descendants
+   inherit the scheme via the --cc-scheme-* custom properties.
+   ============================================================================= */
+
+.scheme-1 {  /* Black — primary marketing surface (nav, footer, CTA) */
+  --cc-scheme-bg: var(--cc-neutral-7);
+  --cc-scheme-fg: var(--cc-white);
+  --cc-scheme-border: var(--cc-white);
+  --cc-scheme-accent: var(--cc-white);
+  --cc-scheme-primary-bg: var(--cc-white);
+  --cc-scheme-primary-fg: var(--cc-neutral-7);
+  --cc-scheme-logo: dark;
+  background-color: var(--cc-scheme-bg);
+  color: var(--cc-scheme-fg);
+}
+.scheme-2 {  /* Off-black — editorial body sections */
+  --cc-scheme-bg: var(--cc-neutral-6);
+  --cc-scheme-fg: var(--cc-white);
+  --cc-scheme-border: var(--cc-white);
+  --cc-scheme-accent: var(--cc-white);
+  --cc-scheme-primary-bg: var(--cc-white);
+  --cc-scheme-primary-fg: var(--cc-neutral-7);
+  --cc-scheme-logo: dark;
+  background-color: var(--cc-scheme-bg);
+  color: var(--cc-scheme-fg);
+}
+.scheme-3 {  /* White — gallery, feature lists, testimonials */
+  --cc-scheme-bg: var(--cc-neutral-0);
+  --cc-scheme-fg: var(--cc-neutral-7);
+  --cc-scheme-border: var(--cc-neutral-7);
+  --cc-scheme-accent: var(--cc-crown-4);
+  --cc-scheme-logo: light;
+  background-color: var(--cc-scheme-bg);
+  color: var(--cc-scheme-fg);
+}
+.scheme-4 {  /* Stone gray — process / step sections */
+  --cc-scheme-bg: var(--cc-neutral-2);
+  --cc-scheme-fg: var(--cc-neutral-7);
+  --cc-scheme-border: var(--cc-neutral-7);
+  --cc-scheme-accent: var(--cc-crown-4);
+  --cc-scheme-logo: light;
+  background-color: var(--cc-scheme-bg);
+  color: var(--cc-scheme-fg);
+}
+.scheme-5 {  /* Crown of Thorns darker — moody supporting blocks */
+  --cc-scheme-bg: var(--cc-crown-6);
+  --cc-scheme-fg: var(--cc-white);
+  --cc-scheme-border: var(--cc-white);
+  --cc-scheme-accent: var(--cc-white);
+  --cc-scheme-primary-bg: var(--cc-white);
+  --cc-scheme-primary-fg: var(--cc-neutral-7);
+  --cc-scheme-logo: dark;
+  background-color: var(--cc-scheme-bg);
+  color: var(--cc-scheme-fg);
+}
+.scheme-6 {  /* Crown of Thorns dark — signature hero color */
+  --cc-scheme-bg: var(--cc-crown-5);
+  --cc-scheme-fg: var(--cc-white);
+  --cc-scheme-border: var(--cc-white);
+  --cc-scheme-accent: var(--cc-white);
+  --cc-scheme-primary-bg: var(--cc-white);
+  --cc-scheme-primary-fg: var(--cc-neutral-7);
+  --cc-scheme-logo: dark;
+  background-color: var(--cc-scheme-bg);
+  color: var(--cc-scheme-fg);
+}
+
+/* =============================================================================
+   BASE SEMANTIC TYPE
+   ============================================================================= */
+body {
+  font-family: var(--cc-font-body);
+  font-weight: 400;
+  color: var(--cc-fg);
+  background: var(--cc-bg);
+  line-height: var(--cc-leading-relaxed);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--cc-font-display);
+  font-weight: 400;            /* Prata only has 400; weight is in the cut */
+  letter-spacing: var(--cc-tracking-tight);
+  line-height: var(--cc-leading-tight);
+}
+
+h1 { font-size: var(--cc-text-h1); }
+h2 { font-size: var(--cc-text-h2); }
+h3 { font-size: var(--cc-text-h3); }
+h4 { font-size: var(--cc-text-h4); line-height: var(--cc-leading-snug); }
+h5 { font-size: var(--cc-text-h5); line-height: var(--cc-leading-normal); }
+h6 { font-size: var(--cc-text-h6); line-height: var(--cc-leading-normal); }
+
+p { font-size: var(--cc-text-medium); line-height: var(--cc-leading-relaxed); }
+
+.cc-eyebrow {
+  font-family: var(--cc-font-body);
+  font-size: var(--cc-text-small);
+  font-weight: 600;
+  letter-spacing: var(--cc-tracking-wide);
+  text-transform: uppercase;
+}
+
+.cc-overline {
+  font-family: var(--cc-font-body);
+  font-size: var(--cc-text-small);
+  font-weight: 600;
+}
+
+.cc-text-large  { font-size: var(--cc-text-large); }
+.cc-text-medium { font-size: var(--cc-text-medium); }
+.cc-text-small  { font-size: var(--cc-text-small); }
+.cc-text-tiny   { font-size: var(--cc-text-tiny); }
+
+/* Mobile type scale (under 992px) */
+@media (max-width: 991px) {
+  :root {
+    --cc-text-h1: 2.75rem;
+    --cc-text-h2: 2.5rem;
+    --cc-text-h3: 2rem;
+    --cc-text-h4: 1.5rem;
+    --cc-text-h5: 1.25rem;
+    --cc-text-h6: 1.125rem;
+    --cc-text-large: 1.125rem;
+    --cc-text-medium: 1rem;
+  }
+}
